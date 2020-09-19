@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import RequestInfoDisplay from '../RequestInfoDisplay';
+
 
 function ConfirmDisplay(props) {
     const info = props.info;
@@ -13,13 +15,7 @@ function ConfirmDisplay(props) {
 
     return (
         <div>
-            <p>Username: {username}</p>
-            <p>Phone #: {phoneNumber}</p>
-            <p>itemsRequested:</p>
-            <ol>{itemsRequested.map((item) => <li key={item.itemName}>{item.itemName} {item.itemLocation}</li>)}</ol>
-            <p>Request Deadline: {requestDeadline ? requestDeadline.toString() : 'no date selected'}</p>
-            <p>Request Deadline time: {requestDeadlineTime}</p>
-            <p>Delivery Location: {deliveryLocation}</p>
+            <RequestInfoDisplay info={info} />
 
             <button onClick={() => props.goBack(0)}>Back to User Info</button>
             <button onClick={() => props.goBack(1)}>Back to Item List</button>

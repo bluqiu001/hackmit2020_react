@@ -8,6 +8,9 @@ import RequestListCreation from '../components/ask/RequestListCreation';
 import DeliveryTimeCalendar from '../components/ask/DeliveryTimeCalendar';
 import LocationSelector from '../components/ask/LocationSelector';
 import ConfirmDisplay from '../components/ask/ConfirmDisplay';
+import RequestInfoDisplay from '../components/RequestInfoDisplay';
+import ReactInfoDisplay from '../components/RequestInfoDisplay';
+
 
 class ask extends Component {
 
@@ -120,6 +123,14 @@ class ask extends Component {
             case 4 :
               return (
                 <ConfirmDisplay info={this.state} goBack={this.returnToPage} confirm={this.handleNext}/>
+              )
+            case 5 :
+              return (
+                <div>
+                  <p>Confirmed!</p>
+                  <ReactInfoDisplay info={this.state} />
+                  <Link to='/'>Back to homepage</Link>
+                </div>
               )
             default:
               return null;
