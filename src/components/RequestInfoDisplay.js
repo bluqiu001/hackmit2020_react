@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 function ReactInfoDisplay(props) {
     const info = props.info;
     
-    const username = info.username;
-    const phoneNumber = info.phoneNumber;
-    const itemsRequested = info.itemsRequested;
-    const requestDeadline = info.requestDeadline;
-    const requestDeadlineTime = info.requestDeadlineTime;
-    const deliveryLocation = info.deliveryLocation;
+    const username = info ? info.username : '';
+    const phoneNumber = info ? info.phoneNumber : '';
+    const itemsRequested = info ? info.itemsRequested : [];
+    const requestDeadline = info ? info.requestDeadline : '';
+    const requestDeadlineTime = info ? info.requestDeadlineTime : '';
+    const deliveryLocation = info ? info.deliveryLocation : '';
 
     return (
         <div>

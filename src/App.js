@@ -25,6 +25,7 @@ import user from './pages/user';
 
 import home from './pages/home';
 import ask from './pages/ask';
+import volunteer from './pages/volunteer';
 
 
 import axios from 'axios';
@@ -77,7 +78,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={home} />
           <Route exact path="/ask" component={ask} />
-          <Route exact path="/volunteer" component={home} />
+          <Route exact path="/volunteer" component={volunteer} />
         </Switch>
       </Router>
     );

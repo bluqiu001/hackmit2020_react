@@ -9,7 +9,6 @@ import DeliveryTimeCalendar from '../components/ask/DeliveryTimeCalendar';
 import LocationSelector from '../components/ask/LocationSelector';
 import ConfirmDisplay from '../components/ask/ConfirmDisplay';
 import RequestInfoDisplay from '../components/RequestInfoDisplay';
-import ReactInfoDisplay from '../components/RequestInfoDisplay';
 
 
 class ask extends Component {
@@ -128,7 +127,7 @@ class ask extends Component {
               return (
                 <div>
                   <p>Confirmed!</p>
-                  <ReactInfoDisplay info={this.state} />
+                  <RequestInfoDisplay info={this.state} />
                   <Link to='/'>Back to homepage</Link>
                 </div>
               )
