@@ -9,6 +9,7 @@ import DeliveryTimeCalendar from '../components/ask/DeliveryTimeCalendar';
 import LocationSelector from '../components/ask/LocationSelector';
 import ConfirmDisplay from '../components/ask/ConfirmDisplay';
 import RequestInfoDisplay from '../components/RequestInfoDisplay';
+import firebase from '../firebase/firebase.js'; // <--- add this line
 
 
 class ask extends Component {
@@ -25,7 +26,7 @@ class ask extends Component {
 
       askStatus: 0,
     };
-
+    
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleListItemCreation = this.handleListItemCreation.bind(this);
     this.removeListItem = this.removeListItem.bind(this);
@@ -74,14 +75,39 @@ class ask extends Component {
   handleNext(event) {
     event.preventDefault();
     this.setState({ askStatus : this.state.askStatus + 1})
+    console.log(this.state.askStatus)
+    if (this.state.askStatus == 4)  {
+      console.log("here")
+      const itemsRef = firebase.database().ref('items');
+      const item = {
+      username: this.state.username,
+      phoneNumber: this.state.phoneNumber,
+      itemsRequested: this.state.itemsRequested,
+      requestDeadline: this.state.requestDeadline,
+      requestDeadlineTime: this.state.requestDeadlineTime,
+      deliveryLocation: this.state.deliveryLocation
+   }
+    itemsRef.push(item);
+    // firebase.database().ref('users/' + this.state.username).set({
+    //  phoneNumber: this.state.phoneNumber,
+    //  itemsRequested: this.state.itemsRequested,
+    //  requestDeadline: this.state.requestDeadline,
+    //  requestDeadlineTime: this.state.requestDeadlineTime,
+    //  deliveryLocation: this.state.deliveryLocation
+    // })
+    }
   }
 
   returnToPage(pageNumber) {
+    pageNumber.preventDefault();
     this.setState({ askStatus : pageNumber });
+    
+    
+
   }
 
   render() {
-    console.log("STATE", this.state);
+    //console.log("STATE", this.state);
     return (
       <div>
         <div>asking</div>
