@@ -3,10 +3,7 @@ import {
     Link,
 } from "react-router-dom";
 
-
-import { connect } from 'react-redux';
-
-class home extends Component {
+class volunteer extends Component {
 
   componentDidMount() {
     console.log("loading");
@@ -15,12 +12,11 @@ class home extends Component {
   render() {
     return (
         <div>
-            <Link to='/ask'>Request help</Link>
-            <br />
-            <Link to='/volunteer'>Volunteer</Link>
+            <p>volunteering</p>
         </div>
     );
   }
+
 }
 
-export default home;
+export default volunteer;

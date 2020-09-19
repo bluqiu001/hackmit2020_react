@@ -5,6 +5,7 @@
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
+    "start-no-firebase": "react-scripts start",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
@@ -13,14 +14,40 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "axios": "^0.20.0",
     "busboy": "^0.3.1",
+    "dayjs": "^1.8.36",
     "firebase": "^7.21.0",
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.6.1",
-    "http-proxy-middleware": "^1.0.5"
+    "http-proxy-middleware": "^1.0.5",
+    "jwt-decode": "^3.0.0-beta.2",
+    "react": "^16.13.1",
+    "react-calendar": "^3.1.0",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "react-time-picker": "^4.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"
   },
-  "private": true
+  "private": true,
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
