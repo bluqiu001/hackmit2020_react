@@ -9,7 +9,7 @@ import ReactScrollableList from 'react-scrollable-list';
 
 import RequestInfoDisplay from '../components/RequestInfoDisplay';
 
-import firebase from '../firebase/firebase.js'; // <--- add this line
+import firebase from '../firebase/firebase.js';
 
 class volunteer extends Component {
 
